@@ -18,3 +18,5 @@
 This is an R Shiny web application that is useful for analyzing species data based on different sites. Additionally, the species richness can be visualized through bar and line charts, showing the distribution across the sites. Furthermore, the application allows users to display marked species on maps with different layers, such as Protected Areas, Wildlife Areas, and eDNA Detection sites.
 
 Moreover, the application provides the ability to explore the Fine Scale Distribution of species using weekly and daily data. The chart also offers functionality to adjust the time duration, allowing users to visualize the data based on their preferred time range.
+
+**Note:** The data may not be presented in a consistent format as more detailed information is shown upon request on the dashboard.
