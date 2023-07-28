@@ -10,16 +10,6 @@ library(sf)
 library(reactable)
 library(shinymanager)
 
-
-# Securing the application and commenting it out for now
-
-# credentials <- data.frame(
-#   user = c("shiny", "shinymanager"),
-#   password = c("azerty", "12345"),
-#   stringsAsFactors = FALSE
-# )
-
-
 # Loading the whole data
 species <- read.csv("data/eDNA_Detections_1.csv")
 
@@ -218,7 +208,6 @@ server <- function(input, output, session) {
         clusterOptions = markerClusterOptions(),
         group = "Filtered-Species"
       ) %>%
-      addPolygons(data = marked_areas, group = "Wildlife Areas") %>%
       # Adding this layer inside the leaflet and distinguish them with the help of groups and then added into addLayersControl ----
       addCircleMarkers(
         data = all_sites,
@@ -238,8 +227,8 @@ server <- function(input, output, session) {
       ) %>%
       # Adding a user interface to control switch layers
       addLayersControl(
-        overlayGroups = c("Filtered-Species", "Wildlife Areas"),
-        baseGroups = c("Filtered-Species", "eDNA Detections", "Wildlife Areas"), # User will get chance to select what data they want to choose
+        overlayGroups = c("Filtered-Species"),
+        baseGroups = c("Filtered-Species", "eDNA Detections"), # User will get chance to select what data they want to choose
 
         # Choose to permanently display or collapse layers control switch
         options = layersControlOptions(collapsed = TRUE)
